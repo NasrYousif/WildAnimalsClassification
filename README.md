@@ -16,19 +16,20 @@ The data used to train the model have been downloaded from this online competeti
 ### 2. Download Image.
 you can download any image from online sources
 ### 3. convert the image into array
-<code>from PIL import Image
+'''
+from PIL import Image
 import numpy as np
-image = Image.open('path/to/image')</code>
 
+image = Image.open('path/to/image')
 numpy_img = np.array(image)
+'''
 ### 4. Make prediction
 use code below to load in predict your target  
-<code>  
+'''
     model = keras.models.load_model('./outputs/savedModel')
-    </code> 
-    <code>
+ 
     y_pred = (model.predict(test_data) > 0.5).astype("int32")
-</code>  
+'''
 
 ## References
 - [TensorFlow](tensorflow.org)
