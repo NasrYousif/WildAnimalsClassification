@@ -24,10 +24,11 @@ numpy_img = np.array(image)
 ### 4. Make prediction
 use code below to load in predict your target  
 <code>
-    # load the model
+    #load the model  
     model = keras.models.load_model('./outputs/savedModel')
-    # predict the targets using predict function un keras</code>    <br/>
+    
     <code>
+        #predict the targets using predict function un keras</code>    <br/>
     y_pred = (model.predict(test_data) > 0.5).astype("int32")
 </code>  
 
