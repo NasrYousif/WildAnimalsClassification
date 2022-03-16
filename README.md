@@ -17,10 +17,18 @@ The data used to train the model have been downloaded from this online competeti
 you can download any image from online sources
 ### 3. convert the image into array
 <code>from PIL import Image
-
+import numpy as np
 image = Image.open('path/to/image')</code>
-### 3. Check your realtime prediction
-Run <code>recognizer.py</code> and look at the camera to see if your face recognized well, 
+
+numpy_img = np.array(image)
+### 4. Make prediction
+use code below to load in predict your target  
+<code> # load the model
+    model = keras.models.load_model('./outputs/savedModel')
+
+    # predict the targets using predict function un keras
+    y_pred = (model.predict(test_data) > 0.5).astype("int32")</code>  
 
 ## References
-- [OpenCV Library](https://docs.opencv.org/3.1.0/d7/d8b/tutorial_py_face_detection.html#gsc.tab=0)
+- [TensorFlow](tensorflow.org)
+- [SciPy ](https://scipy.org/)
